@@ -1,17 +1,18 @@
+
 public class Student {
 
-    private String name;
+    private String fullName;
     private String hall;
     private byte year;
     private char gender;
-    private byte groupNumber;
+    private byte groupIdentifier;
 
     Student(String Name, String Hall, byte Year, char Gender) {
 
-        name = Name;
+        fullName = Name;
         hall = Hall;
         year = Year;
         gender = Gender;
-        groupNumber = -1;
+        groupIdentifier = -1;
     }
 }

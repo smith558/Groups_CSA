@@ -7,7 +7,7 @@ public class Student {
     private char gender;
     private byte groupIdentifier;
 
-    Student(String email, String name, String hall, byte year, char gender) {
+    public Student(String email, String name, String hall, byte year, char gender) {
         this.email = email;
         fullName = name;
         this.hall = hall;

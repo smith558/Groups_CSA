@@ -7,7 +7,7 @@ public class SourceCSV {
     private ArrayList<String> sourceArr = new ArrayList<>();
     private static String newline = System.getProperty("line.separator");
 
-    SourceCSV() throws FileNotFoundException {
+    public SourceCSV() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("src\\database\\sheet.csv"));
         scanner.useDelimiter(",");
 

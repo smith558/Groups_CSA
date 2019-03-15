@@ -36,7 +36,7 @@ public class Student {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
@@ -44,7 +44,7 @@ public class Student {
         return hall;
     }
 
-    public void setHall(String hall) {
+    void setHall(String hall) {
         this.hall = hall;
     }
 
@@ -52,7 +52,7 @@ public class Student {
         return year;
     }
 
-    public void setYear(int year) {
+    void setYear(int year) {
         this.year = year;
     }
 
@@ -60,7 +60,7 @@ public class Student {
         return gender;
     }
 
-    public void setGender(char gender) {
+    void setGender(char gender) {
         this.gender = gender;
     }
 

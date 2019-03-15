@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SourceCSV {
+    
     private ArrayList<Student> sourceArr = new ArrayList<>();
     // deprecated from the last version, instead -> regular expression delimiter [Stanley]
     private static String newline = System.getProperty("line.separator");

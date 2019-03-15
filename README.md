@@ -1,4 +1,4 @@
-Groups_CSA
+## Groups_CSA
 
 1.	Goal – Program application to create groups of people from CSV file ~4hours. 
 2.	Role – co-Programmer, Assistant in school
@@ -11,7 +11,7 @@ As this is urgent task, you must work in pairs to find the solution fast. Most p
 5.3.	As this is project for two programmers, you are writing your own code that will be used by other programmer. It needs to be abstract, not concrete. 
 5.4.	(Other possible customizations)
 5.4.1.	after formation of groups, you can swap some people manually on demand.
-6.	Standards/Criteria 
+6.	Standards/ Criteria 
 6.1.	Working cooperation in pairs, equal division of tasks, support of other
 6.2.	Working solution for reading CSV file, sorting, shuffling groups
 6.3.	Efficiency of solution, Reusability of code

@@ -3,9 +3,10 @@ public class Student {
     private String email;
     private String fullName;
     private String hall;
+    // changed to int, makes more sense
     private int year;
     // no gender field available from data
-    private char gender;
+//    private char gender;
     private byte groupIdentifier = -1;
 
     public Student() { }

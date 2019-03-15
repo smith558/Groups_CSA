@@ -5,14 +5,23 @@ import java.util.Scanner;
 
 public class SourceCSV {
     private ArrayList<String> sourceArr = new ArrayList<>();
+    private static String newline = System.getProperty("line.separator");
 
     SourceCSV() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("src\\database\\sheet.csv"));
         scanner.useDelimiter(",");
 
+        int i = 1;
         while (scanner.hasNext()) {
-//            System.out.print(scanner.next() + "|");
-            sourceArr.add(scanner.next());
+            if (i <= 3) {
+                scanner.useDelimiter(",");
+                sourceArr.add(scanner.next());
+                i++;
+            } else {
+                scanner.useDelimiter(newline);
+                sourceArr.add(scanner.next());
+                i = 0;
+            }
         }
         scanner.close();
     }

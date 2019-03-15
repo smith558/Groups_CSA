@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class SourceCSV {
     private ArrayList<Student> sourceArr = new ArrayList<>();
-    // deprecated from the last version, instead -> regular expression delimiter
+    // deprecated from the last version, instead -> regular expression delimiter [Stanley]
     private static String newline = System.getProperty("line.separator");
 
     public SourceCSV() throws FileNotFoundException {
@@ -32,6 +32,7 @@ public class SourceCSV {
         scanner.close();
     }
 
+    // testing [Stanley]
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV();
         System.out.println(source.sourceArr.get(0));

@@ -3,9 +3,9 @@ public class Student {
     private String email;
     private String fullName;
     private String hall;
-    // changed to int, makes more sense
+    // changed to int, makes more sense [Stanley]
     private int year;
-    // no gender field available from data
+    // no gender field available from data [Stanley]
 //    private char gender;
     private byte groupIdentifier = -1;
 
@@ -55,14 +55,6 @@ public class Student {
 
     void setYear(int year) {
         this.year = year;
-    }
-
-    public char getGender() {
-        return gender;
-    }
-
-    void setGender(char gender) {
-        this.gender = gender;
     }
 
     public byte getGroupIdentifier() {

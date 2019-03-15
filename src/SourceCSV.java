@@ -24,7 +24,8 @@ public class SourceCSV {
                     sourceArr.get(sourceArr.size() - 1).setFullName(scanner.next());
                     break;
                 case 3:
-                    sourceArr.get(sourceArr.size() - 1).setYear(scanner.nextInt());
+                    sourceArr.get(sourceArr.size() - 1).setYear(Integer.parseInt(scanner.next().substring(5)));
+                    i = 0;
             }
         }
         scanner.close();
@@ -32,6 +33,6 @@ public class SourceCSV {
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV();
-        System.out.println(source.sourceArr);
+        System.out.println(source.sourceArr.get(0));
     }
 }

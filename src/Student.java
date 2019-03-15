@@ -8,18 +8,20 @@ public class Student {
     private char gender;
     private byte groupIdentifier = -1;
 
-    public Student() {
-    }
+    public Student() { }
 
-    public Student(String email) {
-        this.email = email;
-    }
+    public Student(String email) { this.email = email; }
 
     public Student(String email, String name, String hall, int year) {
         this.email = email;
         this.fullName = name;
         this.hall = hall;
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return fullName + ", " + email + ", " + hall + ", " + "Year " + year;
     }
 
     public String getEmail() {

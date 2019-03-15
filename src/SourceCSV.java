@@ -9,25 +9,16 @@ public class SourceCSV {
 
     public SourceCSV() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("src\\database\\sheet.csv"));
-        scanner.useDelimiter(",");
+        scanner.useDelimiter(",|\r\n");
 
-        int i = 1;
         while (scanner.hasNext()) {
-            if (i <= 3) {
-                scanner.useDelimiter(",");
-                sourceArr.add(scanner.next());
-                i++;
-            } else {
-                scanner.useDelimiter(newline);
-                sourceArr.add(scanner.next());
-                i = 0;
-            }
+            sourceArr.add(scanner.next());
         }
         scanner.close();
     }
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV();
-        System.out.println(source.sourceArr);
+        System.out.println(source.sourceArr.get(10));
     }
 }

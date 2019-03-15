@@ -4,21 +4,34 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SourceCSV {
-    private ArrayList<String> sourceArr = new ArrayList<>();
+    private ArrayList<Student> sourceArr = new ArrayList<>();
     private static String newline = System.getProperty("line.separator");
 
     public SourceCSV() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("src\\database\\sheet.csv"));
         scanner.useDelimiter(",|\r\n");
 
+        int i = 0;
         while (scanner.hasNext()) {
-            sourceArr.add(scanner.next());
+            switch (i++) {
+                case 0:
+                    sourceArr.add(new Student(scanner.next()));
+                    break;
+                case 1:
+                    sourceArr.get(sourceArr.size() - 1).setHall(scanner.next());
+                    break;
+                case 2:
+                    sourceArr.get(sourceArr.size() - 1).setFullName(scanner.next());
+                    break;
+                case 3:
+                    sourceArr.get(sourceArr.size() - 1).setYear(scanner.nextInt());
+            }
         }
         scanner.close();
     }
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV();
-        System.out.println(source.sourceArr.get(10));
+        System.out.println(source.sourceArr);
     }
 }

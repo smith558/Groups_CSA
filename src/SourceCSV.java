@@ -21,6 +21,10 @@ public class SourceCSV {
                     break;
                 case 1:
                     sourceArr.get(sourceArr.size() - 1).setHall(scanner.next());
+                    if(sourceArr.get(sourceArr.size()-1).getHall()=="Gentlemen"||sourceArr.get(sourceArr.size()-1).getHall()=="Founders")
+                        sourceArr.get(sourceArr.size()-1).setGender('m');
+                    else
+                        sourceArr.get(sourceArr.size()-1).setGender('f');
                     break;
                 case 2:
                     sourceArr.get(sourceArr.size() - 1).setFullName(scanner.next());

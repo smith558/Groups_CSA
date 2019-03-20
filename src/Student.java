@@ -19,17 +19,17 @@ public class Student {
         this.hall = hall;
         this.year = year;
         if(hall == "Founders" || hall == "Gentlemen"){
-            gender = "m";
+            gender = 'm';
 
         }
         else{
-            gender = "f";
+            gender = 'f';
         }
     }
 
     @Override
     public String toString() {
-        return fullName + ", " + email + ", " + hall + ", " + "Year " + year;
+        return fullName + ", " + email + ", " + hall + ", " + "Year " + year + ", Gender: " + gender;
     }
 
     public String getEmail() {
@@ -62,6 +62,10 @@ public class Student {
 
     void setYear(int year) {
         this.year = year;
+    }
+
+    void setGender(char gender){
+        this.gender = gender;
     }
 
     public byte getGroupIdentifier() {

@@ -40,6 +40,6 @@ public class SourceCSV {
     // testing [Stanley]
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-        System.out.println(source.sourceArr.get(0));
+        System.out.println(source.sourceArr.get(0)); 
     }
 }

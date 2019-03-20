@@ -7,4 +7,12 @@ public class groupSplitting {
             System.out.println();
         }
     }
+
+    void groupByHall(ArrayList<Student> srcArray, int nrInGroup) {
+
+    }
+
+    public static void main(String[] args) {
+
+    }
 }

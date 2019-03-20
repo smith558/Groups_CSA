@@ -29,7 +29,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return fullName + ", " + email + ", " + hall + ", " + "Year " + year + ", Gender: " + gender;
+        return fullName + ", " + email + ", " + hall + ", " + "Year " + year + ", Gender: " + gender + ", Group: " +groupIdentifier;
     }
 
     public String getEmail() {

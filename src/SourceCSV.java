@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SourceCSV {
-    
+
     private ArrayList<Student> sourceArr = new ArrayList<>();
     // deprecated from the last version, instead -> regular expression delimiter [Stanley]
     private static String newline = System.getProperty("line.separator");
@@ -21,10 +21,10 @@ public class SourceCSV {
                     break;
                 case 1:
                     sourceArr.get(sourceArr.size() - 1).setHall(scanner.next());
-                    if(sourceArr.get(sourceArr.size()-1).getHall()=="Gentlemen"||sourceArr.get(sourceArr.size()-1).getHall()=="Founders")
-                        sourceArr.get(sourceArr.size()-1).setGender('m');
+                    if (sourceArr.get(sourceArr.size() - 1).getHall().equals("Gentlemen") || sourceArr.get(sourceArr.size() - 1).getHall().equals("Founders"))
+                        sourceArr.get(sourceArr.size() - 1).setGender('m');
                     else
-                        sourceArr.get(sourceArr.size()-1).setGender('f');
+                        sourceArr.get(sourceArr.size() - 1).setGender('f');
                     break;
                 case 2:
                     sourceArr.get(sourceArr.size() - 1).setFullName(scanner.next());

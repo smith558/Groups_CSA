@@ -18,7 +18,7 @@ public class Student {
         this.fullName = name;
         this.hall = hall;
         this.year = year;
-        if(hall == "Founders" || hall == "Gentlemen"){
+        if(hall.equals("Founders") || hall.equals("Gentlemen")){
             gender = 'm';
 
         }

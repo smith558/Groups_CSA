@@ -5,8 +5,8 @@ public class Student {
     private String hall;
     // changed to int, makes more sense [Stanley]
     private int year;
-    // no gender field available from data [Stanley]
-//    private char gender;
+    // gender is set based on hall [Jirka]
+    private char gender;
     private byte groupIdentifier = -1;
 
     public Student() { }
@@ -18,6 +18,13 @@ public class Student {
         this.fullName = name;
         this.hall = hall;
         this.year = year;
+        if(hall == "Founders" || hall == "Gentlemen"){
+            gender = "m";
+
+        }
+        else{
+            gender = "f";
+        }
     }
 
     @Override

@@ -9,8 +9,8 @@ public class SourceCSV {
     // deprecated from the last version, instead -> regular expression delimiter [Stanley]
     private static String newline = System.getProperty("line.separator");
 
-    public SourceCSV() throws FileNotFoundException {
-        Scanner scanner = new Scanner(new File("src\\database\\sheet.csv"));
+    public SourceCSV(String path) throws FileNotFoundException {
+        Scanner scanner = new Scanner(new File(path));
         scanner.useDelimiter(",|\r\n");
 
         int i = 0;
@@ -39,7 +39,7 @@ public class SourceCSV {
 
     // testing [Stanley]
     public static void main(String[] args) throws FileNotFoundException {
-        SourceCSV source = new SourceCSV();
+        SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
         System.out.println(source.sourceArr.get(0));
     }
 }

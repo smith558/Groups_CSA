@@ -20,7 +20,6 @@ public class Student {
         this.year = year;
         if(hall.equals("Founders") || hall.equals("Gentlemen")){
             gender = 'm';
-
         }
         else{
             gender = 'f';

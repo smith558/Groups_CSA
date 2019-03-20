@@ -68,6 +68,8 @@ public class Student {
         this.gender = gender;
     }
 
+    public char getGender() { return gender; }
+
     public byte getGroupIdentifier() {
         return groupIdentifier;
     }

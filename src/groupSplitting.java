@@ -2,10 +2,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class groupSplitting {
-    void groupByGender(ArrayList<Student> srcArray, int nrInGroup) {
-        int num = nrInGroup;
-        for (int i = 0; i < 6; i++) {
-            System.out.println();
+    public void groupByGender(ArrayList<Student> srcArr, int groupSize) {
+        //  have a look at this, proper division
+        int numOfGroups = srcArr.size() / groupSize;
+        for (int i = 0; i < srcArr.size(); i++) {
+            Student nowStud = srcArr.get(i);
+            if (nowStud.ge)
         }
     }
 

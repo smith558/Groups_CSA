@@ -15,6 +15,7 @@ public class groupSplitting {
     }
 
     public static void groupByHall(ArrayList<Student> srcArray, int nrInGroup) {
+        System.out.println("There is "+srcArray.size()+" students");
         int groupsNr;
         if(srcArray.size()%nrInGroup==0){
             groupsNr = srcArray.size()/nrInGroup;
@@ -22,54 +23,88 @@ public class groupSplitting {
         else{
             groupsNr = srcArray.size()/nrInGroup + 1;
         }
+        System.out.println("There will be " +groupsNr+ " groups.");
         for(int i = 0;i<groupsNr;i++){
             int iteration = 1;
-            for(int j=0;j<nrInGroup;j++){
+            int pplInGroup = 0;
+            while(pplInGroup<nrInGroup){
             switch(iteration){
                 case 1:
                     int index = 0;
-                    while(!srcArray.get(j).getHall().equals("Founders")||srcArray.get(index).getGroupIdentifier()!=-1){
+                    while(!srcArray.get(index).getHall().equals("Founders")||srcArray.get(index).getGroupIdentifier()!=-1){
                         index++;
-                        if(index==srcArray.size())
-                            j--;
+                        System.out.println("founders not found yet");
+                        if(index==srcArray.size()){
+                            System.out.println("founders not found anywhere");
+
                             iteration=2;
-                            break;
+                            break;}
+
+
                     }
-                    if(srcArray.get(j).getHall().equals("Founders")&&srcArray.get(index).getGroupIdentifier()==-1)
-                        srcArray.get(j).setGroupIdentifier((byte)i);
+                    if(srcArray.get(index).getHall().equals("Founders")&&srcArray.get(index).getGroupIdentifier()==-1){
+                        srcArray.get(index).setGroupIdentifier((byte)i);
+                        System.out.println("trying to change group of a founder");
+                        pplInGroup++;
+                        iteration++;
+                    }
                 case 2:
                     index = 0;
-                    while(!srcArray.get(j).getHall().equals("Gentlemen")||srcArray.get(index).getGroupIdentifier()!=-1){
+                    while(!srcArray.get(index).getHall().equals("Gentlemen")||srcArray.get(index).getGroupIdentifier()!=-1){
                         index++;
-                        if(index==srcArray.size())
-                            j--;
-                        iteration=3;
-                        break;
+                        System.out.println("gentlemen not found yet");
+                        if(index==srcArray.size()){
+                            System.out.println("gentlemen not found anywhere");
+
+                            iteration=3;
+                            break;}
+
+
                     }
-                    if(srcArray.get(j).getHall().equals("Gentlemen")&&srcArray.get(index).getGroupIdentifier()==-1)
-                        srcArray.get(j).setGroupIdentifier((byte)i);
+                    if(srcArray.get(index).getHall().equals("Gentlemen")&&srcArray.get(index).getGroupIdentifier()==-1){
+                        srcArray.get(index).setGroupIdentifier((byte)i);
+                        System.out.println("trying to change group of a gentleman");
+                        pplInGroup++;
+                        iteration++;
+                    }
                 case 3:
                     index = 0;
-                    while(!srcArray.get(j).getHall().equals("Sprouts")||srcArray.get(index).getGroupIdentifier()!=-1){
+                    while(!srcArray.get(index).getHall().equals("Sprouts")||srcArray.get(index).getGroupIdentifier()!=-1){
                         index++;
-                        if(index==srcArray.size())
-                            j--;
-                        iteration=4;
-                        break;
+                        System.out.println("sprouts not found yet");
+                        if(index==srcArray.size()){
+                            System.out.println("sprouts not found anywhere");
+
+                            iteration=4;
+                            break;}
+
+
                     }
-                    if(srcArray.get(j).getHall().equals("Sprouts")&&srcArray.get(index).getGroupIdentifier()==-1)
-                        srcArray.get(j).setGroupIdentifier((byte)i);
+                    if(srcArray.get(index).getHall().equals("Sprouts")&&srcArray.get(index).getGroupIdentifier()==-1){
+                        srcArray.get(index).setGroupIdentifier((byte)i);
+                        System.out.println("trying to change group of a sprout");
+                        pplInGroup++;
+                        iteration++;
+                    }
                 case 4:
                     index = 0;
-                    while(!srcArray.get(j).getHall().equals("Fortes")||srcArray.get(index).getGroupIdentifier()!=-1){
+                    while(!srcArray.get(index).getHall().equals("Fortes")||srcArray.get(index).getGroupIdentifier()!=-1){
                         index++;
-                        if(index==srcArray.size())
-                            j--;
-                        iteration=4;
-                        break;
+                        System.out.println("fortes not found yet");
+                        if(index==srcArray.size()){
+                            System.out.println("fortes not found anywhere");
+
+                            iteration=1;
+                            break;}
+
+
                     }
-                    if(srcArray.get(j).getHall().equals("Fortes")&&srcArray.get(index).getGroupIdentifier()==-1)
-                        srcArray.get(j).setGroupIdentifier((byte)i);
+                    if(srcArray.get(index).getHall().equals("Fortes")&&srcArray.get(index).getGroupIdentifier()==-1){
+                        srcArray.get(index).setGroupIdentifier((byte)i);
+                        System.out.println("trying to change group of a fortes");
+                        pplInGroup++;
+                        iteration++;
+                    }
             }
 
             }
@@ -78,7 +113,7 @@ public class groupSplitting {
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-        groupByHall(source.sourceArr, 5);
+        groupByHall(source.sourceArr, 6);
         System.out.println(source.sourceArr);
 
     }

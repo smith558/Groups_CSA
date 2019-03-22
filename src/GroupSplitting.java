@@ -8,15 +8,15 @@ public class GroupSplitting {
 
         //  iterating through source
         int gB = 1, gG = 1;
-        for (Student nowStud : srcArr) {
-            nowStud.setGroupIdentifier((byte) 0);
-            if (nowStud.getGender() == 'f') {
+        for (Student student : srcArr) {
+            student.setGroupIdentifier((byte) 0);
+            if (student.getGender() == 'f') {
                 if (gG > numOfGroups) gG = 1;
-                nowStud.setGroupIdentifier((byte) gG);
+                student.setGroupIdentifier((byte) gG);
                 gG++;
             } else {
                 if (gB > numOfGroups) gB = 1;
-                nowStud.setGroupIdentifier((byte) gB);
+                student.setGroupIdentifier((byte) gB);
                 gB++;
             }
         }

@@ -18,6 +18,7 @@ public class Student {
         this.fullName = name;
         this.hall = hall;
         this.year = year;
+
         if(hall.equals("Founders") || hall.equals("Gentlemen")){
             gender = 'm';
         }
@@ -28,7 +29,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return fullName + ", " + email + ", " + hall + ", " + "Year " + year + ", Gender: " + gender;
+        return fullName + ", " + email + ", " + hall + ", " + "Year " + year + ", Gender: " + gender + ", Group: " + groupIdentifier;
     }
 
     public String getEmail() {

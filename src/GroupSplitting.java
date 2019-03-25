@@ -42,7 +42,9 @@ public class GroupSplitting {
         }
     }
 
-
+    public static void groupByYear(ArrayList<Student> srcArr, int groupSize) {
+        
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");

@@ -42,8 +42,33 @@ public class GroupSplitting {
         }
     }
 
-    public static void groupByYear(ArrayList<Student> srcArr, int groupSize) {
-        
+    public static int groupByYear(ArrayList<Student> srcArr, int groupSize) {
+        //  have a look at this, proper division?
+        int numOfGroups = srcArr.size() / groupSize;
+
+        //  iterating through source
+        int g1 = 1, g2 = 1, g3 = 1, g4 = 1;
+        for (Student student : srcArr) {
+            student.setGroupIdentifier((byte) 0);
+            if (student.getYear() == 1) {
+                if (g1 > numOfGroups) g1 = 1;
+                student.setGroupIdentifier((byte) g1);
+                g1++;
+            } else if (student.getYear() == 2) {
+                if (g2 > numOfGroups) g2 = 1;
+                student.setGroupIdentifier((byte) g2);
+                g2++;
+            } else if (student.getYear() == 3) {
+                if (g3 > numOfGroups) g3 = 1;
+                student.setGroupIdentifier((byte) g3);
+                g3++;
+            } else {
+                if (g4 > numOfGroups) g4 = 1;
+                student.setGroupIdentifier((byte) g4);
+                g4++;
+            }
+        }
+        return numOfGroups;
     }
 
     public static void main(String[] args) throws FileNotFoundException {

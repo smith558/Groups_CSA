@@ -41,6 +41,7 @@ public class SourceCSV {
         scanner.close();
     }
 
+    //  is this actually needed?
     public ArrayList<Student> getSourceArr() {
         return sourceArr;
     }

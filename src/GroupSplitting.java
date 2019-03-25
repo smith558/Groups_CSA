@@ -33,12 +33,16 @@ public class GroupSplitting {
             groupsNr = srcArray.size()/nrInGroup + 1;
         }
         System.out.println("There will be " +groupsNr+ " groups.");
+        int pplAdded = 0;
         for(int i = 0;i<groupsNr;i++){
             int iteration = 1;
             int pplInGroup = 0;
+            while(pplInGroup<nrInGroup&&pplAdded<srcArray.size());
 
         }
     }
+
+
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");

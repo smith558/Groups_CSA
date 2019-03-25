@@ -122,13 +122,7 @@ public class GroupSplitting {
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-        System.out.println("females " + source.numOfFemales);
-        System.out.println("males " + source.numOfMales);
-        System.out.println("num of groups" + GroupSplitting.groupByGender(source.getSourceArr(), 8));
+        groupByHall(source.getSourceArr(),6);
         System.out.println(source.getSourceArr());
-        for (Student student : source.getSourceArr()) {
-            System.out.println(student);
-            System.out.println();
-        }
     }
 }

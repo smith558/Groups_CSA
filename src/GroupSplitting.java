@@ -24,20 +24,19 @@ public class GroupSplitting {
     }
 
     public static void groupByHall(ArrayList<Student> srcArray, int nrInGroup) {
-        System.out.println("There is "+srcArray.size()+" students");
+        System.out.println("There is " + srcArray.size() + " students");
         int groupsNr;
-        if(srcArray.size()%nrInGroup==0){
-            groupsNr = srcArray.size()/nrInGroup;
+        if (srcArray.size() % nrInGroup == 0) {
+            groupsNr = srcArray.size() / nrInGroup;
+        } else {
+            groupsNr = srcArray.size() / nrInGroup + 1;
         }
-        else{
-            groupsNr = srcArray.size()/nrInGroup + 1;
-        }
-        System.out.println("There will be " +groupsNr+ " groups.");
+        System.out.println("There will be " + groupsNr + " groups.");
         int pplAdded = 0;
-        for(int i = 0;i<groupsNr;i++){
+        for (int i = 0; i < groupsNr; i++) {
             int iteration = 1;
             int pplInGroup = 0;
-            while(pplInGroup<nrInGroup&&pplAdded<srcArray.size());
+            while (pplInGroup < nrInGroup && pplAdded < srcArray.size()) ;
 
         }
     }
@@ -73,7 +72,7 @@ public class GroupSplitting {
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-        groupByHall(source.getSourceArr(),6);
+        groupByHall(source.getSourceArr(), 6);
         System.out.println(source.getSourceArr());
     }
 }

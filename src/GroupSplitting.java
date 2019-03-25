@@ -36,87 +36,72 @@ public class GroupSplitting {
         for (int i = 0; i < groupsNr; i++) {
             int iteration = 1;
             int pplInGroup = 0;
-            while(pplInGroup<nrInGroup&&pplAdded<srcArray.size()){
-                switch(iteration){
+            while (pplInGroup < nrInGroup && pplAdded < srcArray.size()) {
+                switch (iteration) {
                     case 1:
-                        if(pplInGroup==nrInGroup)
+                        if (pplInGroup == nrInGroup)
                             break;
-                        for(int r=0;r<srcArray.size();r++){
-                            if(srcArray.get(r).getHall().equals("Founders")&&srcArray.get(r).getGroupIdentifier()==-1){
-                                srcArray.get(r).setGroupIdentifier((byte)i);
+                        for (int r = 0; r < srcArray.size(); r++) {
+                            if (srcArray.get(r).getHall().equals("Founders") && srcArray.get(r).getGroupIdentifier() == -1) {
+                                srcArray.get(r).setGroupIdentifier((byte) i);
                                 pplInGroup++;
                                 pplAdded++;
                                 break;
-
                             }
-                            if(r==srcArray.size()){
-                                iteration=2;
+                            if (r == srcArray.size()) {
+                                iteration = 2;
                                 break;
                             }
-
-
                         }
                     case 2:
-                        if(pplInGroup==nrInGroup)
+                        if (pplInGroup == nrInGroup)
                             break;
-                        for(int r=0;r<srcArray.size();r++){
-                            if(srcArray.get(r).getHall().equals("Gentlemen")&&srcArray.get(r).getGroupIdentifier()==-1){
-                                srcArray.get(r).setGroupIdentifier((byte)i);
+                        for (int r = 0; r < srcArray.size(); r++) {
+                            if (srcArray.get(r).getHall().equals("Gentlemen") && srcArray.get(r).getGroupIdentifier() == -1) {
+                                srcArray.get(r).setGroupIdentifier((byte) i);
                                 pplInGroup++;
                                 pplAdded++;
                                 break;
-
                             }
-                            if(r==srcArray.size()){
-                                iteration=3;
+                            if (r == srcArray.size()) {
+                                iteration = 3;
                                 break;
                             }
-
-
                         }
                     case 3:
-                        if(pplInGroup==nrInGroup)
+                        if (pplInGroup == nrInGroup)
                             break;
-                        for(int r=0;r<srcArray.size();r++){
-                            if(srcArray.get(r).getHall().equals("Sprouts")&&srcArray.get(r).getGroupIdentifier()==-1){
-                                srcArray.get(r).setGroupIdentifier((byte)i);
+                        for (int r = 0; r < srcArray.size(); r++) {
+                            if (srcArray.get(r).getHall().equals("Sprouts") && srcArray.get(r).getGroupIdentifier() == -1) {
+                                srcArray.get(r).setGroupIdentifier((byte) i);
                                 pplInGroup++;
                                 pplAdded++;
                                 break;
-
                             }
-                            if(r==srcArray.size()){
-                                iteration=4;
+                            if (r == srcArray.size()) {
+                                iteration = 4;
                                 break;
                             }
-
-
                         }
                     case 4:
-                        if(pplInGroup==nrInGroup)
+                        if (pplInGroup == nrInGroup)
                             break;
-                        for(int r=0;r<srcArray.size();r++){
-                            if(srcArray.get(r).getHall().equals("Fortes")&&srcArray.get(r).getGroupIdentifier()==-1){
-                                srcArray.get(r).setGroupIdentifier((byte)i);
+                        for (int r = 0; r < srcArray.size(); r++) {
+                            if (srcArray.get(r).getHall().equals("Fortes") && srcArray.get(r).getGroupIdentifier() == -1) {
+                                srcArray.get(r).setGroupIdentifier((byte) i);
                                 pplInGroup++;
                                 pplAdded++;
                                 break;
-
                             }
-                            if(r==srcArray.size()){
-                                iteration=1;
+                            if (r == srcArray.size()) {
+                                iteration = 1;
                                 break;
                             }
-
-
                         }
                 }
             }
-
         }
     }
-    
-
 
     public static int groupByYear(ArrayList<Student> srcArr, int groupSize) {
         //  have a look at this, proper division?

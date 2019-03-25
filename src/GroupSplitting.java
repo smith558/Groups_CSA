@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class GroupSplitting {
     public static int groupByGender(ArrayList<Student> srcArr, int groupSize) {
-        //  have a look at this, proper division
+        //  have a look at this, proper division?
         int numOfGroups = srcArr.size() / groupSize;
 
         //  iterating through source

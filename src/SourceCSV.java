@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SourceCSV {
-
-    ArrayList<Student> sourceArr = new ArrayList<>();
-    // deprecated from the last version, instead -> regular expression delimiter [Stanley]
-    private static String newline = System.getProperty("line.separator");
+    private ArrayList<Student> sourceArr = new ArrayList<>();
+    public int numOfFemales = 0;
+    public int numOfMales = 0;
 
     public SourceCSV(String path) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(path));
@@ -21,10 +20,15 @@ public class SourceCSV {
                     break;
                 case 1:
                     sourceArr.get(sourceArr.size() - 1).setHall(scanner.next());
-                    if (sourceArr.get(sourceArr.size() - 1).getHall().equals("Gentlemen") || sourceArr.get(sourceArr.size() - 1).getHall().equals("Founders"))
+                    if (sourceArr.get(sourceArr.size() - 1).getHall().equals("Gentlemen") || sourceArr.get(sourceArr.size() - 1).getHall().equals("Founders")) {
                         sourceArr.get(sourceArr.size() - 1).setGender('m');
-                    else
+                        //  change 'numOfMales'
+                        numOfMales++;
+                    } else {
                         sourceArr.get(sourceArr.size() - 1).setGender('f');
+                        // change 'numOfFemales'
+                        numOfFemales++;
+                    }
                     break;
                 case 2:
                     sourceArr.get(sourceArr.size() - 1).setFullName(scanner.next());
@@ -37,9 +41,14 @@ public class SourceCSV {
         scanner.close();
     }
 
+    public ArrayList<Student> getSourceArr() {
+        return sourceArr;
+    }
+
     // testing [Stanley]
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-        System.out.println(source.sourceArr.get(0)); 
+        System.out.println(source.sourceArr.get(0));
+        System.out.println(source.numOfFemales);
     }
 }

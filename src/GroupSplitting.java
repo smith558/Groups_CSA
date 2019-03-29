@@ -13,10 +13,10 @@ public class GroupSplitting {
      * the screen, the data will be loaded. The graphics primitives
      * that draw the image will incrementally paint on the screen.
      *
-     * @param  url  an absolute URL giving the base location of the image
-     * @param  name the location of the image, relative to the url argument
-     * @return      the image at the specified URL
-     * @see         Image
+     * @param url  an absolute URL giving the base location of the image
+     * @param name the location of the image, relative to the url argument
+     * @return the image at the specified URL
+     * @see Image
      */
     public static int groupByGender(ArrayList<Student> srcArr, int groupSize) {
         //  shuffling the srcArr to ensure 'randomness'
@@ -42,8 +42,10 @@ public class GroupSplitting {
     }
 
     /**
-     * Groups the array specified in input by hall so that there is an equal count of each hall in each group - works best if number of people in group is divisible by 4
-     * @param srcArray array we want to sort by hall
+     * Groups the array specified in input by hall so that there is an equal count of each hall in each group - works best if number of people in group is
+     * divisible by 4
+     *
+     * @param srcArray  array we want to sort by hall
      * @param nrInGroup number of people we want in one group
      */
     public static void groupByHall(ArrayList<Student> srcArray, int nrInGroup) {
@@ -56,7 +58,7 @@ public class GroupSplitting {
         }
         System.out.println("There will be " + groupsNr + " groups.");
         int pplAdded = 0;
-        for (int i = 1; i < groupsNr+1; i++) {
+        for (int i = 1; i < groupsNr + 1; i++) {
             int iteration = 1;
             int pplInGroup = 0;
             while (pplInGroup < nrInGroup && pplAdded < srcArray.size()) {
@@ -159,19 +161,20 @@ public class GroupSplitting {
 
     /**
      * prints out the specified field sorted by groups that are created in it
+     *
      * @param srcArr the array we want to print
      */
-    public static void testGroups(ArrayList<Student> srcArr){
+    public static void testGroups(ArrayList<Student> srcArr) {
         int nrGroups = 0;
-        for(int i=0;i<srcArr.size();i++){
-            if(srcArr.get(i).getGroupIdentifier()>nrGroups)
+        for (int i = 0; i < srcArr.size(); i++) {
+            if (srcArr.get(i).getGroupIdentifier() > nrGroups)
                 nrGroups = srcArr.get(i).getGroupIdentifier();
         }
-        System.out.println("We have " +nrGroups+ " groups");
-        for(int i=1;i<=nrGroups;i++){
-            System.out.println("In group number "+i+" there are these objects:");
-            for(int j=0;j<srcArr.size();j++){
-                if(srcArr.get(j).getGroupIdentifier()==i)
+        System.out.println("We have " + nrGroups + " groups");
+        for (int i = 1; i <= nrGroups; i++) {
+            System.out.println("In group number " + i + " there are these objects:");
+            for (int j = 0; j < srcArr.size(); j++) {
+                if (srcArr.get(j).getGroupIdentifier() == i)
                     System.out.println(srcArr.get(j));
             }
             System.out.println();
@@ -180,12 +183,13 @@ public class GroupSplitting {
 
     /**
      * shuffles the specified array and sets the group identifier to -1
+     *
      * @param srcArray array we want to shuffle
      */
-    public static void shuffleReset(ArrayList<Student> srcArray){
+    public static void shuffleReset(ArrayList<Student> srcArray) {
         Collections.shuffle(srcArray);
-        for(int i=0;i<srcArray.size();i++)
-            srcArray.get(i).setGroupIdentifier((byte)-1);
+        for (Student aSrcArray : srcArray)
+            aSrcArray.setGroupIdentifier((byte) -1);
     }
 
     public static void main(String[] args) throws FileNotFoundException {

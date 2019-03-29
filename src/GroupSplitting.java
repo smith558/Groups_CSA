@@ -2,10 +2,13 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static java.lang.System.*;
+
 /**
  *
  */
 public class GroupSplitting {
+    
     /**
      * @param srcArr
      * @param groupSize
@@ -42,14 +45,14 @@ public class GroupSplitting {
      * @param nrInGroup number of people we want in one group
      */
     public static void groupByHall(ArrayList<Student> srcArray, int nrInGroup) {
-        System.out.println("There is " + srcArray.size() + " students");
+        out.println("There is " + srcArray.size() + " students");
         int groupsNr;
         if (srcArray.size() % nrInGroup == 0) {
             groupsNr = srcArray.size() / nrInGroup;
         } else {
             groupsNr = srcArray.size() / nrInGroup + 1;
         }
-        System.out.println("There will be " + groupsNr + " groups.");
+        out.println("There will be " + groupsNr + " groups.");
         int pplAdded = 0;
         for (int i = 1; i < groupsNr + 1; i++) {
             int iteration = 1;
@@ -121,6 +124,11 @@ public class GroupSplitting {
         }
     }
 
+    /**
+     * @param srcArr
+     * @param groupSize
+     * @return
+     */
     public static int groupByYear(ArrayList<Student> srcArr, int groupSize) {
         //  shuffling the srcArr to ensure 'randomness'
         Collections.shuffle(srcArr);
@@ -163,19 +171,10 @@ public class GroupSplitting {
             if (aSrcArr.getGroupIdentifier() > nrGroups)
                 nrGroups = aSrcArr.getGroupIdentifier();
         }
-        System.out.println("We have " + nrGroups + " groups");
+        out.println("We have " + nrGroups + " groups");
         for (int i = 1; i <= nrGroups; i++) {
-            int nrBoys = 0;
-            int nrGirls = 0;
-            int nrFounders = 0;
-            int nrGentlemen = 0;
-            int nrSprouts = 0;
-            int nrFortes = 0;
-            int nrY1 = 0;
-            int nrY2 = 0;
-            int nrY3 = 0;
-            int nrY4 = 0;
-            System.out.println("In group number " + i + " there are these objects:");
+            int nrBoys = 0, nrGirls = 0, nrFounders = 0, nrGentlemen = 0, nrSprouts = 0, nrFortes = 0, nrY1 = 0, nrY2 = 0, nrY3 = 0, nrY4 = 0;
+            out.println("In group number " + i + " there are these objects:");
             for (Student aSrcArr : srcArr) {
                 switch (aSrcArr.getGender()) {
                     case 'f':
@@ -204,12 +203,12 @@ public class GroupSplitting {
                         nrY4++;
                 }
                 if (aSrcArr.getGroupIdentifier() == i)
-                    System.out.println(aSrcArr);
+                    out.println(aSrcArr);
             }
-            System.out.println("There is " + nrFounders + " Founders, " + nrGentlemen + " Gentlemen, " + nrSprouts + " Sprouts, " + nrFortes + " Fortes in this group.");
-            System.out.println("There is " + nrGirls + " females and " + nrBoys + " males.");
-            System.out.println("There is " + nrY1 + " Y1s, " + nrY2 + " Y2s, " + nrY3 + " Y3s and " + nrY4 + " Y4s.");
-            System.out.println();
+            out.println("There is " + nrFounders + " Founders, " + nrGentlemen + " Gentlemen, " + nrSprouts + " Sprouts, " + nrFortes + " Fortes in this group.");
+            out.println("There is " + nrGirls + " females and " + nrBoys + " males.");
+            out.println("There is " + nrY1 + " Y1s, " + nrY2 + " Y2s, " + nrY3 + " Y3s and " + nrY4 + " Y4s.");
+            out.println();
         }
     }
 
@@ -227,18 +226,18 @@ public class GroupSplitting {
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
 
-        System.out.println("******** grouping by hall");
-        System.out.println();
+        out.println("******** grouping by hall");
+        out.println();
         groupByHall(source.getSourceArr(), 6);
         testGroups(source.getSourceArr());
 
-        System.out.println("******** grouping by gender");
-        System.out.println();
+        out.println("******** grouping by gender");
+        out.println();
         groupByGender(source.getSourceArr(), 6);
         testGroups(source.getSourceArr());
 
-        System.out.println("******** grouping by year");
-        System.out.println();
+        out.println("******** grouping by year");
+        out.println();
         groupByYear(source.getSourceArr(), 6);
         testGroups(source.getSourceArr());
     }

@@ -41,6 +41,11 @@ public class GroupSplitting {
         return numOfGroups;
     }
 
+    /**
+     * Groups the array specified in input by hall so that there is an equal count of each hall in each group - works best if number of people in group is divisible by 4
+     * @param srcArray array we want to sort by hall
+     * @param nrInGroup number of people we want in one group
+     */
     public static void groupByHall(ArrayList<Student> srcArray, int nrInGroup) {
         System.out.println("There is " + srcArray.size() + " students");
         int groupsNr;
@@ -152,6 +157,10 @@ public class GroupSplitting {
         return numOfGroups;
     }
 
+    /**
+     * prints out the specified field sorted by groups that are created in it
+     * @param srcArr the array we want to print
+     */
     public static void testGroups(ArrayList<Student> srcArr){
         int nrGroups = 0;
         for(int i=0;i<srcArr.size();i++){
@@ -167,6 +176,16 @@ public class GroupSplitting {
             }
             System.out.println();
         }
+    }
+
+    /**
+     * shuffles the specified array and sets the group identifier to -1
+     * @param srcArray array we want to shuffle
+     */
+    public static void shuffleReset(ArrayList<Student> srcArray){
+        Collections.shuffle(srcArray);
+        for(int i=0;i<srcArray.size();i++)
+            srcArray.get(i).setGroupIdentifier((byte)-1);
     }
 
     public static void main(String[] args) throws FileNotFoundException {

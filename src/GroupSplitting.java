@@ -167,11 +167,50 @@ public class GroupSplitting {
         }
         System.out.println("We have " +nrGroups+ " groups");
         for(int i=1;i<=nrGroups;i++){
+            int nrBoys = 0;
+            int nrGirls = 0;
+            int nrFounders = 0;
+            int nrGentlemen = 0;
+            int nrSprouts = 0;
+            int nrFortes = 0;
+            int nrY1 = 0;
+            int nrY2 = 0;
+            int nrY3 = 0;
+            int nrY4 = 0;
             System.out.println("In group number "+i+" there are these objects:");
             for(int j=0;j<srcArr.size();j++){
+                switch(srcArr.get(j).getGender()) {
+                    case 'f':
+                        nrGirls++;
+                    case 'm':
+                        nrBoys++;
+                }
+                switch (srcArr.get(j).getHall()){
+                    case "Founders":
+                        nrFounders++;
+                    case "Gentlemen":
+                        nrGentlemen++;
+                    case "Sprouts":
+                        nrSprouts++;
+                    case "Fortes":
+                        nrFortes++;
+                }
+                switch (srcArr.get(j).getYear()){
+                    case 1:
+                        nrY1++;
+                    case 2:
+                        nrY2++;
+                    case 3:
+                        nrY3++;
+                    case 4:
+                        nrY4++;
+                }
                 if(srcArr.get(j).getGroupIdentifier()==i)
                     System.out.println(srcArr.get(j));
             }
+            System.out.println("There is "+nrFounders+" Founders, "+nrGentlemen+" Gentlemen, "+nrSprouts+" Sprouts, "+nrFortes+" Fortes in this group.");
+            System.out.println("There is "+nrGirls+" females and "+nrBoys+" males.");
+            System.out.println("There is "+nrY1+" Y1s, "+nrY2+" Y2s, "+nrY3+" Y3s and "+nrY4+" Y4s.");
             System.out.println("");
         }
     }
@@ -193,6 +232,6 @@ public class GroupSplitting {
         shuffleReset(source.getSourceArr());
         groupByHall(source.getSourceArr(),8);
         testGroups(source.getSourceArr());
-        
+
     }
 }

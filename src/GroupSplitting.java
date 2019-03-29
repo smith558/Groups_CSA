@@ -6,6 +6,7 @@ public class GroupSplitting {
         //  have a look at this, proper division?
         int numOfGroups = srcArr.size() / groupSize;
 
+
         //  iterating through source
         int gB = 1, gG = 1;
         for (Student student : srcArr) {
@@ -33,7 +34,7 @@ public class GroupSplitting {
         }
         System.out.println("There will be " + groupsNr + " groups.");
         int pplAdded = 0;
-        for (int i = 0; i < groupsNr; i++) {
+        for (int i = 1; i < groupsNr+1; i++) {
             int iteration = 1;
             int pplInGroup = 0;
             while (pplInGroup < nrInGroup && pplAdded < srcArray.size()) {
@@ -130,6 +131,10 @@ public class GroupSplitting {
             }
         }
         return numOfGroups;
+    }
+
+    public static void testGroups(ArrayList<Student> srcArr){
+
     }
 
     public static void main(String[] args) throws FileNotFoundException {

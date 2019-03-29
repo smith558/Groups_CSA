@@ -149,12 +149,26 @@ public class GroupSplitting {
     }
 
     public static void testGroups(ArrayList<Student> srcArr){
-
+        int nrGroups = 0;
+        for(int i=0;i<srcArr.size();i++){
+            if(srcArr.get(i).getGroupIdentifier()>nrGroups)
+                nrGroups = srcArr.get(i).getGroupIdentifier();
+        }
+        System.out.println("We have " +nrGroups+ " groups");
+        for(int i=1;i<=nrGroups;i++){
+            System.out.println("In group number "+i+" there are these objects:");
+            for(int j=0;j<srcArr.size();j++){
+                if(srcArr.get(j).getGroupIdentifier()==i)
+                    System.out.println(srcArr.get(j));
+            }
+            System.out.println("");
+        }
     }
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
         groupByHall(source.getSourceArr(), 6);
-        System.out.println(source.getSourceArr());
+        testGroups(source.getSourceArr());
+
     }
 }

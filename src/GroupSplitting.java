@@ -8,7 +8,7 @@ import static java.lang.System.*;
  *
  */
 public class GroupSplitting {
-    
+
     /**
      * @param srcArr
      * @param groupSize

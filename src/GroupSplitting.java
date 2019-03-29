@@ -1,11 +1,13 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GroupSplitting {
     public static int groupByGender(ArrayList<Student> srcArr, int groupSize) {
+        //  shuffling the srcArr to ensure 'randomness'
+        Collections.shuffle(srcArr);
         //  have a look at this, proper division?
         int numOfGroups = srcArr.size() / groupSize;
-
 
         //  iterating through source
         int gB = 1, gG = 1;

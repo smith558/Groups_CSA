@@ -7,6 +7,7 @@ public class SourceCSV {
     private ArrayList<Student> sourceArr = new ArrayList<>();
     public int numOfFemales = 0;
     public int numOfMales = 0;
+    public int numOfGroups = 0;
 
     public SourceCSV(String path) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(path));

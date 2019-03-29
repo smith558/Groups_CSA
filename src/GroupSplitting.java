@@ -147,6 +147,10 @@ public class GroupSplitting {
         return numOfGroups;
     }
 
+    public static void testGroups(ArrayList<Student> srcArr){
+        
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
         groupByHall(source.getSourceArr(), 6);

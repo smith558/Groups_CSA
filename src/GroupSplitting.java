@@ -122,6 +122,8 @@ public class GroupSplitting {
     }
 
     public static int groupByYear(ArrayList<Student> srcArr, int groupSize) {
+        //  shuffling the srcArr to ensure 'randomness'
+        Collections.shuffle(srcArr);
         //  have a look at this, proper division?
         int numOfGroups = srcArr.size() / groupSize;
 
@@ -163,14 +165,26 @@ public class GroupSplitting {
                 if(srcArr.get(j).getGroupIdentifier()==i)
                     System.out.println(srcArr.get(j));
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
+
+        System.out.println("******** grouping by hall");
+        System.out.println();
         groupByHall(source.getSourceArr(), 6);
         testGroups(source.getSourceArr());
 
+        System.out.println("******** grouping by gender");
+        System.out.println();
+        groupByGender(source.getSourceArr(), 6);
+        testGroups(source.getSourceArr());
+
+        System.out.println("******** grouping by year");
+        System.out.println();
+        groupByYear(source.getSourceArr(), 6);
+        testGroups(source.getSourceArr());
     }
 }

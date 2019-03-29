@@ -152,9 +152,18 @@ public class GroupSplitting {
         }
     }
 
+    public static void shuffleReset(ArrayList<Student> srcArray){
+        Collections.shuffle(srcArray);
+        for(int i=0;i<srcArray.size();i++)
+            srcArray.get(i).setGroupIdentifier((byte)-1);
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-        groupByHall(source.getSourceArr(), 6);
+        groupByHall(source.getSourceArr(), 8);
+        testGroups(source.getSourceArr());
+        shuffleReset(source.getSourceArr());
+        groupByHall(source.getSourceArr(),8);
         testGroups(source.getSourceArr());
 
     }

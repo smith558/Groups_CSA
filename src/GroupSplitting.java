@@ -7,7 +7,6 @@ import java.util.Collections;
  */
 public class GroupSplitting {
     /**
-     *
      * @param srcArr
      * @param groupSize
      * @return
@@ -160,12 +159,12 @@ public class GroupSplitting {
      */
     public static void testGroups(ArrayList<Student> srcArr) {
         int nrGroups = 0;
-        for (int i = 0; i < srcArr.size(); i++) {
-            if (srcArr.get(i).getGroupIdentifier() > nrGroups)
-                nrGroups = srcArr.get(i).getGroupIdentifier();
+        for (Student aSrcArr : srcArr) {
+            if (aSrcArr.getGroupIdentifier() > nrGroups)
+                nrGroups = aSrcArr.getGroupIdentifier();
         }
-        System.out.println("We have " +nrGroups+ " groups");
-        for(int i=1;i<=nrGroups;i++){
+        System.out.println("We have " + nrGroups + " groups");
+        for (int i = 1; i <= nrGroups; i++) {
             int nrBoys = 0;
             int nrGirls = 0;
             int nrFounders = 0;
@@ -176,15 +175,15 @@ public class GroupSplitting {
             int nrY2 = 0;
             int nrY3 = 0;
             int nrY4 = 0;
-            System.out.println("In group number "+i+" there are these objects:");
-            for(int j=0;j<srcArr.size();j++){
-                switch(srcArr.get(j).getGender()) {
+            System.out.println("In group number " + i + " there are these objects:");
+            for (Student aSrcArr : srcArr) {
+                switch (aSrcArr.getGender()) {
                     case 'f':
                         nrGirls++;
                     case 'm':
                         nrBoys++;
                 }
-                switch (srcArr.get(j).getHall()){
+                switch (aSrcArr.getHall()) {
                     case "Founders":
                         nrFounders++;
                     case "Gentlemen":
@@ -194,7 +193,7 @@ public class GroupSplitting {
                     case "Fortes":
                         nrFortes++;
                 }
-                switch (srcArr.get(j).getYear()){
+                switch (aSrcArr.getYear()) {
                     case 1:
                         nrY1++;
                     case 2:
@@ -204,13 +203,13 @@ public class GroupSplitting {
                     case 4:
                         nrY4++;
                 }
-                if(srcArr.get(j).getGroupIdentifier()==i)
-                    System.out.println(srcArr.get(j));
+                if (aSrcArr.getGroupIdentifier() == i)
+                    System.out.println(aSrcArr);
             }
-            System.out.println("There is "+nrFounders+" Founders, "+nrGentlemen+" Gentlemen, "+nrSprouts+" Sprouts, "+nrFortes+" Fortes in this group.");
-            System.out.println("There is "+nrGirls+" females and "+nrBoys+" males.");
-            System.out.println("There is "+nrY1+" Y1s, "+nrY2+" Y2s, "+nrY3+" Y3s and "+nrY4+" Y4s.");
-            System.out.println("");
+            System.out.println("There is " + nrFounders + " Founders, " + nrGentlemen + " Gentlemen, " + nrSprouts + " Sprouts, " + nrFortes + " Fortes in this group.");
+            System.out.println("There is " + nrGirls + " females and " + nrBoys + " males.");
+            System.out.println("There is " + nrY1 + " Y1s, " + nrY2 + " Y2s, " + nrY3 + " Y3s and " + nrY4 + " Y4s.");
+            System.out.println();
         }
     }
 

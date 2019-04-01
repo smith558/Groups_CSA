@@ -47,6 +47,7 @@ public class GroupSplitting {
     public static void groupByHall(ArrayList<Student> srcArray, int nrInGroup) {
         out.println("There is " + srcArray.size() + " students");
         int groupsNr;
+        //counts groups
         if (srcArray.size() % nrInGroup == 0) {
             groupsNr = srcArray.size() / nrInGroup;
         } else {
@@ -57,6 +58,7 @@ public class GroupSplitting {
         for (int i = 1; i < groupsNr + 1; i++) {
             int iteration = 1;
             int pplInGroup = 0;
+            //always picks a person from each hall and adds them to the group
             while (pplInGroup < nrInGroup && pplAdded < srcArray.size()) {
                 switch (iteration) {
                     case 1:

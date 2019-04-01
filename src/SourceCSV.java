@@ -13,7 +13,7 @@ public class SourceCSV {
     public int numOfMales = 0;
 
     /**
-     * The constructor mutates the 'sourceArr' array by adding Student objects
+     * The constructor mutates the {@param sourceArr} array by adding Student objects
      *
      * @param path path to the .csv file in String data-type
      * @throws FileNotFoundException handling exception when file not found
@@ -53,8 +53,9 @@ public class SourceCSV {
 
     //  is this actually needed?
     /**
+     * Ensure that the client-class cannot directly access the main database ArrayList {@param sourceArr}
      *
-     * @return
+     * @return the reference variable copy
      */
     public ArrayList<Student> getSourceArr() {
         return sourceArr;

@@ -13,6 +13,13 @@ public class Student {
 
     public Student(String email) { this.email = email; }
 
+    /**
+     *
+     * @param email
+     * @param name
+     * @param hall
+     * @param year
+     */
     public Student(String email, String name, String hall, int year) {
         this.email = email;
         this.fullName = name;

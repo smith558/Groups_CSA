@@ -3,11 +3,21 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class provides all the functionality to convert provided expected .csv
+ * into an ArrayList of Student objects which represent single students
+ */
 public class SourceCSV {
     private ArrayList<Student> sourceArr = new ArrayList<>();
     public int numOfFemales = 0;
     public int numOfMales = 0;
 
+    /**
+     * The constructor mutates the {@param sourceArr} array by adding Student objects
+     *
+     * @param path path to the .csv file in String data-type
+     * @throws FileNotFoundException handling exception when file not found
+     */
     public SourceCSV(String path) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(path));
         scanner.useDelimiter(",|\r\n");
@@ -42,6 +52,11 @@ public class SourceCSV {
     }
 
     //  is this actually needed?
+    /**
+     * Ensure that the client-class cannot directly access the main database ArrayList {@param sourceArr}
+     *
+     * @return the reference variable copy
+     */
     public ArrayList<Student> getSourceArr() {
         return sourceArr;
     }

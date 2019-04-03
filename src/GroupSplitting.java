@@ -38,8 +38,8 @@ public class GroupSplitting {
     }
 
     /**
-     * Groups the array specified in input by hall so that there is an equal count of each hall in each group - works best if number of people in group is
-     * divisible by 4
+     * Groups the array specified in input by hall so that there is an equal count of each
+     * hall in each group - works best if number of people in group is divisible by 4
      *
      * @param srcArray  array we want to sort by hall
      * @param nrInGroup number of people we want in one group
@@ -163,7 +163,7 @@ public class GroupSplitting {
     }
 
     /**
-     * prints out the specified field sorted by groups that are created in it
+     * Prints out the specified field sorted by groups that are created in it
      *
      * @param srcArr the array we want to print
      */
@@ -229,7 +229,7 @@ public class GroupSplitting {
     }
 
     /**
-     * shuffles the specified array and sets the group identifier to -1
+     * Shuffles the specified array and sets the group identifier to -1
      *
      * @param srcArray array we want to shuffle
      */

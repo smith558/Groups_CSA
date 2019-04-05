@@ -63,11 +63,4 @@ public class SourceCSV {
     public ArrayList<Student> getSourceArr() {
         return sourceArr;
     }
-
-    // testing [Stanley]
-    public static void main(String[] args) throws FileNotFoundException {
-        SourceCSV source = new SourceCSV("database\\sheet.csv");
-        System.out.println(source.sourceArr.get(0));
-        System.out.println(source.numOfFemales);
-    }
 }

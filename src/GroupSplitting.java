@@ -240,11 +240,4 @@ public class GroupSplitting {
         for (Student aSrcArray : srcArray)
             aSrcArray.setGroupIdentifier((byte) -1);
     }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-
-        groupByGender(source.getSourceArr(), 5);
-        testGroups(source.getSourceArr());
-    }
 }

@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import static java.lang.System.*;
@@ -10,7 +9,7 @@ import static java.lang.System.*;
 public class GroupSplitting {
 
     /**
-     * @param srcArr bla
+     * @param srcArr    bla
      * @param groupSize bla
      * @return bla
      */
@@ -129,7 +128,7 @@ public class GroupSplitting {
     }
 
     /**
-     * @param srcArr bla
+     * @param srcArr    bla
      * @param groupSize bla
      * @return bla
      */

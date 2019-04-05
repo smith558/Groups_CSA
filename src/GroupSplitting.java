@@ -165,7 +165,7 @@ public class GroupSplitting {
     }
 
     /**
-     * Prints out the specified field sorted by groups that are created in it
+     * Prints out the specified field sorted by groups that are created in it and speaks about the groups' parameters
      *
      * @param srcArr the array we want to print
      */

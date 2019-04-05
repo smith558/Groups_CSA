@@ -18,18 +18,20 @@ public class GroupSplitting {
         //  shuffling the srcArr to ensure 'randomness'
         Collections.shuffle(srcArr);
         //  have a look at this, proper division?
-        int numOfGroups = srcArr.size() / groupSize;
+        int numOfGroups = (int) (srcArr.size() / groupSize + 0.5);
 
         //  iterating through source
         int gB = 1, gG = 1;
         for (Student student : srcArr) {
             student.setGroupIdentifier((byte) 0);
             if (student.getGender() == 'f') {
-                if (gG > numOfGroups) gG = 1;
+                if (gG > numOfGroups)
+                    gG = 1;
                 student.setGroupIdentifier((byte) gG);
                 gG++;
             } else {
-                if (gB > numOfGroups) gB = 1;
+                if (gB > numOfGroups)
+                    gB = 1;
                 student.setGroupIdentifier((byte) gB);
                 gB++;
             }
@@ -135,7 +137,7 @@ public class GroupSplitting {
         //  shuffling the srcArr to ensure 'randomness'
         Collections.shuffle(srcArr);
         //  have a look at this, proper division?
-        int numOfGroups = srcArr.size() / groupSize;
+        int numOfGroups = (int) (srcArr.size() / groupSize + 0.5);
 
         //  iterating through source
         int g1 = 1, g2 = 1, g3 = 1, g4 = 1;
@@ -242,10 +244,7 @@ public class GroupSplitting {
     public static void main(String[] args) throws FileNotFoundException {
         SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
 
-        out.println("******** grouping by hall");
-        out.println();
-        groupByGender(source.getSourceArr(), 3);
+        groupByGender(source.getSourceArr(), 5);
         testGroups(source.getSourceArr());
-
     }
 }

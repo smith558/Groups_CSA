@@ -242,7 +242,7 @@ public class GroupSplitting {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
+        SourceCSV source = new SourceCSV("database\\sheet.csv");
 
         groupByGender(source.getSourceArr(), 5);
         testGroups(source.getSourceArr());

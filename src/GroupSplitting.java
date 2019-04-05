@@ -1,18 +1,17 @@
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
-
 import static java.lang.System.*;
 
 /**
- *
+ * This class provides for all the static grouping methods available, these methods group
+ * students from the 'groupByHall' based on a characteristic
  */
 public class GroupSplitting {
 
     /**
-     * @param srcArr
-     * @param groupSize
-     * @return
+     * @param srcArr    bla
+     * @param groupSize bla
+     * @return bla
      */
     public static int groupByGender(ArrayList<Student> srcArr, int groupSize) {
         //  shuffling the srcArr to ensure 'randomness'
@@ -129,9 +128,9 @@ public class GroupSplitting {
     }
 
     /**
-     * @param srcArr
-     * @param groupSize
-     * @return
+     * @param srcArr    bla
+     * @param groupSize bla
+     * @return bla
      */
     public static int groupByYear(ArrayList<Student> srcArr, int groupSize) {
         //  shuffling the srcArr to ensure 'randomness'
@@ -239,12 +238,5 @@ public class GroupSplitting {
         Collections.shuffle(srcArray);
         for (Student aSrcArray : srcArray)
             aSrcArray.setGroupIdentifier((byte) -1);
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        SourceCSV source = new SourceCSV("src\\database\\sheet.csv");
-
-        groupByGender(source.getSourceArr(), 5);
-        testGroups(source.getSourceArr());
     }
 }

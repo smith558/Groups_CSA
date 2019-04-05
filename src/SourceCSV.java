@@ -6,6 +6,9 @@ import java.util.Scanner;
 /**
  * This class provides all the functionality to convert provided expected .csv
  * into an ArrayList of Student objects which represent single students
+ *
+ * @author Stanley
+ * @author Jirka
  */
 public class SourceCSV {
     private ArrayList<Student> sourceArr = new ArrayList<>();
@@ -13,7 +16,7 @@ public class SourceCSV {
     public int numOfMales = 0;
 
     /**
-     * The constructor mutates the {@param sourceArr} array by adding Student objects
+     * The constructor mutates the 'sourceArr' array by adding Student objects
      *
      * @param path path to the .csv file in String data-type
      * @throws FileNotFoundException handling exception when file not found
@@ -53,7 +56,7 @@ public class SourceCSV {
 
     //  is this actually needed?
     /**
-     * Ensure that the client-class cannot directly access the main database ArrayList {@param sourceArr}
+     * Ensure that the client-class cannot directly access the main database ArrayList 'sourceArr'
      *
      * @return the reference variable copy
      */

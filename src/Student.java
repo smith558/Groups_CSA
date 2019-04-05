@@ -18,10 +18,10 @@ public class Student {
 
     /**
      *
-     * @param email
-     * @param name
-     * @param hall
-     * @param year
+     * @param email bla
+     * @param name bla
+     * @param hall bla
+     * @param year bla
      */
     public Student(String email, String name, String hall, int year) {
         this.email = email;
